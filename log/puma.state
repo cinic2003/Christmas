@@ -1,0 +1,22 @@
+---
+pid: 5918
+config: !ruby/object:Puma::Configuration
+  options:
+    :min_threads: 0
+    :max_threads: 16
+    :quiet: false
+    :debug: false
+    :binds:
+    - tcp://0.0.0.0:8080
+    :workers: 0
+    :daemon: true
+    :worker_directory: /Users/mac/projects/Christmas
+    :config_file: config/puma.rb
+    :mode: :http
+    :pidfile: /Users/mac/projects/Christmas/log/puma.pid
+    :state: /Users/mac/projects/Christmas/log/puma.state
+    :redirect_stdout: /Users/mac/projects/Christmas/log/puma.out.log
+    :redirect_stderr: /Users/mac/projects/Christmas/log/puma.err.log
+    :redirect_append: true
+    :control_auth_token: 5df7b3783e7efe285d7168bdb71d1a5e
+    :environment: development

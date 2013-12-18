@@ -1,0 +1,24 @@
+<div class='box'>
+<% if @gift.present? %>
+  <div class='field'>
+    <label>你的天使是:</label>
+    <%= @gift.name %>
+  </div>
+  <div>
+    <label>他/她的愿望是:</label><br>
+    <%= markdown @gift.giving %>
+  </div>
+  <div>
+    <label>他/她想对你说:</label><br>
+    <%= markdown @gift.talk %>
+  </div>
+
+<% end %>
+
+</div>
+<style type="text/css">
+  body {
+    background: #c72727 url("/assets/christm.jpg") top center no-repeat;
+  }
+  .box{ width:650px; height:420px; margin:135px auto; line-height:24px;}
+</style>
