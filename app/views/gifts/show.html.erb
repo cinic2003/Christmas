@@ -6,13 +6,12 @@
 </p>
 
 <p>
-  <strong>愿望:</strong>
-  <%= markdown @gift.giving %>
+  <strong>愿望:</strong><br>
+  <%= markdown(@gift.giving) %>
 </p>
 <p>
-  <strong>对天使说的话:</strong>
-  <%= markdown @gift.talk %>
-  <%= sanitize @gift.talk, tags: %w(br a p) %>
+  <strong>对天使说的话:</strong><br>
+  <%= markdown(@gift.talk) %>
 </p>
 
 
@@ -20,3 +19,6 @@
   <strong>实现人:</strong>
   <%= @gift.who %>
 </p>
+
+
+<%= link_to '返回', gifts_path %>

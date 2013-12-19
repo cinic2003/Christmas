@@ -1,15 +1,18 @@
 <div class='box'>
+<% if flash[:notice] %>
+  <%= flash[:notice] %><br>
+<% end %>
 <% if @gift.present? %>
   <div class='field'>
-    <label>你的天使是:</label>
+    <label><strong>你的天使是:</strong></label>
     <%= @gift.name %>
   </div>
   <div>
-    <label>他/她的愿望是:</label><br>
+    <label><strong>他/她的愿望是:</strong></label><br>
     <%= markdown @gift.giving %>
   </div>
   <div>
-    <label>他/她想对你说:</label><br>
+    <label><strong>他/她想对你说:</strong></label><br>
     <%= markdown @gift.talk %>
   </div>
 

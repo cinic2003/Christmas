@@ -1,6 +1,10 @@
 <div class="box">
   <h1>你要实现谁的圣诞愿望？</h1>
   请在下面找出您的名字<br>
+  <% if flash[:notice] %>
+    <%= flash[:notice] %><br>
+  <% end %>
+  
   <div class='name'>
   <% @names.each do |key, value| %>
     <%= value %>
@@ -10,7 +14,7 @@
   </div>
   <%= form_for @gift, :url => welcome_pick_path do |f| %>
     <div class="field">
-      <%= f.label '输入你的名字' %>（在上面找你的名字）<br>
+      <strong><%= f.label '输入你的名字' %></strong>（在上面找你的名字）<br>
       <%= text_field_tag :who %>
     </div>
     <input type='button' name='commit' id='submit_button' />
@@ -49,8 +53,12 @@ $('#submit_button').click(function(){
         alert('你已经抽过了！');
         return false;
       }
+      if (data == 2){
+        alert('已经抽完了！');
+        return false;
+      }
       if(data == 3){
-        alert('请输入上面出现的名字！');
+        alert('请在上面找到你的名字！');
         return false;
       }
       $('.new_gift').submit();

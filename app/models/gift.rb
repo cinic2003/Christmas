@@ -1,7 +1,7 @@
 class Gift < ActiveRecord::Base
   # attr_accessible :name, :giving, :who, :is_done
   
-  scope :no_done, ->{where(is_done: false)}
+  scope :no_done, ->{where.not(is_done: true)}
   
   def self.name_list
     lists = {}
@@ -17,10 +17,10 @@ class Gift < ActiveRecord::Base
   def self.pick_name(who)
     user = Gift.where(who: who).first
     if user.blank? and Gift.no_done.size > 0
-      un_gifts = Gift.no_done.map{|g| g.id}
+      un_gifts = Gift.no_done.delete_if{|g| g.who == who}.map{|g| g.id}
       index = rand(un_gifts.size)
       gift = Gift.find un_gifts[index]
-      if who.present? and gift.who != who
+      if who.present?
         return gift
       else
         return false

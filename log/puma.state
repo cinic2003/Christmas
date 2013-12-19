@@ -1,5 +1,5 @@
 ---
-pid: 5918
+pid: 2972
 config: !ruby/object:Puma::Configuration
   options:
     :min_threads: 0
@@ -18,5 +18,5 @@ config: !ruby/object:Puma::Configuration
     :redirect_stdout: /Users/mac/projects/Christmas/log/puma.out.log
     :redirect_stderr: /Users/mac/projects/Christmas/log/puma.err.log
     :redirect_append: true
-    :control_auth_token: 5df7b3783e7efe285d7168bdb71d1a5e
+    :control_auth_token: 8847f1eb5ec09acef990c3725a3d7a4c
     :environment: development
