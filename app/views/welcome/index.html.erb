@@ -1,9 +1,11 @@
 <div class="box">
+  
+  <% if flash[:notice] %>
+    <font size="4" color="red"><%= flash[:notice] %></font><br>
+  <% end %>
+  
   <h1>你要实现谁的圣诞愿望？</h1>
   请在下面找出您的名字<br>
-  <% if flash[:notice] %>
-    <%= flash[:notice] %><br>
-  <% end %>
   
   <div class='name'>
   <% @names.each do |key, value| %>

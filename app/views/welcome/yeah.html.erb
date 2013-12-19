@@ -4,20 +4,21 @@
 <% end %>
 <% if @gift.present? %>
   <div class='field'>
-    <label><strong>你的天使是:</strong></label>
+    <label><strong>你的国王是:</strong></label>
     <%= @gift.name %>
   </div>
   <div>
-    <label><strong>他/她的愿望是:</strong></label><br>
+    <label><strong>国王的愿望是:</strong></label><br>
     <%= markdown @gift.giving %>
   </div>
   <div>
-    <label><strong>他/她想对你说:</strong></label><br>
+    <label><strong>国王想对你说:</strong></label><br>
     <%= markdown @gift.talk %>
   </div>
 
 <% end %>
 
+<%= link_to '返回', root_path %>
 </div>
 <style type="text/css">
   body {

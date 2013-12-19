@@ -3,24 +3,26 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Giving</th>
-      <th>Who</th>
+      <th>国王</th>
+      <th style='width: 400px'>愿望</th>
+      <th>天使</th>
       <th></th>
+      <th>对天使说的话</th>
       <th></th>
-      <th></th>
+      <th>编辑</th>
     </tr>
   </thead>
 
   <tbody>
     <% @gifts.each do |gift| %>
       <tr>
-        <td><%= gift.name %></td>
+        <td><%= link_to gift.name, gift %></td>
         <td><%= gift.giving %></td>
         <td><%= gift.who %></td>
-        <td><%= link_to 'Show', gift %></td>
+        <td style='width: 20px'></td>
+        <td style='width: 200px'><%= gift.talk %></td>
+        <td style='width: 20px'></td>
         <td><%= link_to 'Edit', edit_gift_path(gift) %></td>
-        <td><%= link_to 'Destroy', gift, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

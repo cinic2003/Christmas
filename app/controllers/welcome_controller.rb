@@ -24,9 +24,13 @@ class WelcomeController < ApplicationController
   end
   
   def yeah
-    @gift = Gift.find params[:id]
-    unless params[:token].present? or @gift.token != params[:token]
-      redirect_to :back, :notice => 'Sorry!'
+    if params[:token].present?
+      @gift = Gift.find params[:id]
+      if @gift.token != params[:token]
+        redirect_to root_path, :notice => '偷窥别人的愿望是不可以的哦，亲!'
+      end
+    else
+      redirect_to root_path, :notice => '偷窥别人的愿望是不可以的哦，亲!!'
     end
   end
   
