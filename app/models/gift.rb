@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Gift < ActiveRecord::Base
   # attr_accessible :name, :giving, :who, :is_done
   
