@@ -6,8 +6,8 @@ gem 'rails', '4.0.0'
 gem 'puma'
 # gem 'mysql2'
 gem 'sqlite3'
-gem 'redcarpet'
-gem 'coderay'
+# gem 'redcarpet'
+# gem 'coderay'
 
 gem 'sass-rails', '~> 4.0.0'
 
