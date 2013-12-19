@@ -18,7 +18,7 @@ class Gift < ActiveRecord::Base
   def self.pick_name(who)
     user = Gift.where(who: who).first
     if user.blank? and Gift.no_done.size > 0
-      un_gifts = Gift.no_done.delete_if{|g| g.who == who}.map{|g| g.id}
+      un_gifts = Gift.no_done.delete_if{|g| g.name == who}.map{|g| g.id}
       index = rand(un_gifts.size)
       gift = Gift.find un_gifts[index]
       if who.present?
